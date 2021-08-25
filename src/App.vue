@@ -1,30 +1,38 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div class="app">
+        <header class="header">
+            Best Fantasy Authors
+        </header>
+        <author-search></author-search>
+        <author-add></author-add>
+        <author-list></author-list>
+    </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import AuthorList from '../components/AuthorList.vue';
+import AuthorSearch from '../components/AuthorSearch.vue';
+import AuthorAdd from '../components/AuthorAdd';
+export default {
+    components: {
+        AuthorList,
+        AuthorSearch,
+        AuthorAdd
+    },
 }
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<style>
+    .app {
+        display: flex;
+        flex-direction: column;
     }
-  }
-}
+    .btn {
+        width: 10%;
+        margin: 15px 0;
+        background: none;
+        justify-content: start;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
 </style>

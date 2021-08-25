@@ -1,0 +1,49 @@
+{
+  "authors": [
+    {
+        "firstname": "John Ronald Reuel",
+        "lastname": "Tolkien",
+        "dateofbirth": "03.01.1892",
+        "dateofdeath": "02.09.1973",
+        "id": 1,
+        "books": [
+          {
+              "id": 1,
+              "book": "The Hobbit"
+          },
+          {
+              "id": 2,
+              "book": "The Lord Of The Rings"
+          }
+      ]
+    },
+    {
+        "firstname": "Terry",
+        "lastname": "Pratchet",
+        "dateofbirth": "28.04.1948",
+        "dateofdeath": "12.03.2015",
+        "id": 2
+    },
+    {
+        "firstname": "Andrzej",
+        "lastname": "Sapkowski",
+        "dateofbirth": "21.06.1948",
+        "dateofdeath": "--",
+        "id": 3
+    },
+    {
+        "firstname": "George Raymond Richard",
+        "lastname": "Martin",
+        "dateofbirth": "20.09.1948",
+        "dateofdeath": "--",
+        "id": 4
+    },
+    {
+      "firstname": "e3131",
+      "lastname": "3131",
+      "dateofbirth": "313",
+      "dateofdeath": "3131",
+      "id": 5
+    }
+  ]
+}

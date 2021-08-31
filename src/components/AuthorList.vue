@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+    <div class="list">
         <table class="my__table">
             <thead>
                 <tr>
@@ -13,16 +13,20 @@
             </thead>
             <tbody v-for="author in authors" :key="author.id">
                 <tr>
-                    <th></th>
+                    <th>{{ author.date }}</th>
                     <th>{{ author.firstname }}</th>
                     <th>{{ author.lastname }}</th>
                     <th>{{ author.dateofbirth }}</th>
                     <th>{{ author.dateofdeath }}</th>
-                    <th></th>
+                    <th>
+                        <button @click="deleteAuthor(author.id)">Delete</button>
+                        <button>Edit</button>
+                        <button @click="showBooks(author.id)"></button>
+                    </th>
                 </tr>
             </tbody>
         </table>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -31,30 +35,45 @@ export default {
         data() {
             return {
                 authors: null,
+                errorMessage: '',
             }
         },
         mounted() {
             axios.get('http://localhost:3000/authors')
-            .then(response => (this.authors = response.data));
+            .then(response => (this.authors = response.data))
+           
         },
         methods: {
-            
+            deleteAuthor(id) {
+               axios.delete(`http://localhost:3000/authors/${id}`)
+                .then(response => console.log(response))
+            },
+            showBooks(id) {
+                axios.get(`http://localhost:3000/authors/${id}/books`)
+                .then(response => (this.authors = response.data)) 
+            }
       }
     }
 </script>
 
-<style>
-    .wrapper {
+<style lang='scss'>
+    .list {
         display: flex;
-        flex-direction: column;
+        justify-self: center;
     }
     .my__table {
-        width: 80%;
         border-collapse: collapse
     }   
     .my__table, th, tr {
         border: 1px solid grey;
-        padding: 5px;
+        padding: 15px 35px;
+        button {
+            padding: 5px;
+            margin: 5px;
+            a {
+                text-decoration: none;
+            }
+        }
     }
     
 </style>

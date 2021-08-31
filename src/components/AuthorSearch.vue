@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search">
       <form action="">
           <input type="text" placeholder="Search">
       </form>
@@ -12,6 +12,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .search {
+    display: flex;
+    flex-direction: row;
+  }
 </style>

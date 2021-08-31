@@ -1,49 +1,52 @@
 {
   "authors": [
     {
-        "firstname": "John Ronald Reuel",
-        "lastname": "Tolkien",
-        "dateofbirth": "03.01.1892",
-        "dateofdeath": "02.09.1973",
-        "id": 1,
-        "books": [
-          {
-              "id": 1,
-              "book": "The Hobbit"
-          },
-          {
-              "id": 2,
-              "book": "The Lord Of The Rings"
-          }
-      ]
+      "date": "25.08.2021, 21:15:30",
+      "firstname": "John Ronald Reuel",
+      "lastname": "Tolkien",
+      "dateofbirth": "03.01.1892",
+      "dateofdeath": "02.09.1973",
+      "id": 1
     },
     {
-        "firstname": "Terry",
-        "lastname": "Pratchet",
-        "dateofbirth": "28.04.1948",
-        "dateofdeath": "12.03.2015",
-        "id": 2
+      "date": "25.08.2021, 21:17:30",
+      "firstname": "Terry",
+      "lastname": "Pratchet",
+      "dateofbirth": "28.04.1948",
+      "dateofdeath": "12.03.2015",
+      "id": 2
     },
     {
-        "firstname": "Andrzej",
-        "lastname": "Sapkowski",
-        "dateofbirth": "21.06.1948",
-        "dateofdeath": "--",
-        "id": 3
+      "date": "25.08.2021, 21:19:30",
+      "firstname": "Andrzej",
+      "lastname": "Sapkowski",
+      "dateofbirth": "21.06.1948",
+      "dateofdeath": "--",
+      "id": 3
     },
     {
-        "firstname": "George Raymond Richard",
-        "lastname": "Martin",
-        "dateofbirth": "20.09.1948",
-        "dateofdeath": "--",
-        "id": 4
+      "date": "25.08.2021, 21:38:30",
+      "firstname": "George Raymond Richard",
+      "lastname": "Martin",
+      "dateofbirth": "20.09.1948",
+      "dateofdeath": "--",
+      "id": 4
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Lord of The Rings",
+      "dateofpublication": "29.07.1954",
+      "description": "Epic Saga",
+      "authorId": 1
     },
     {
-      "firstname": "e3131",
-      "lastname": "3131",
-      "dateofbirth": "313",
-      "dateofdeath": "3131",
-      "id": 5
+      "id": 2,
+      "title": "Hobbit",
+      "dateofpublication": "29.07.1951",
+      "description": "Some small guy",
+      "authorId": 1
     }
   ]
 }

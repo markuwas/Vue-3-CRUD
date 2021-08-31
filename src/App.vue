@@ -1,38 +1,54 @@
 <template>
-    <div class="app">
-        <header class="header">
-            Best Fantasy Authors
-        </header>
-        <author-search></author-search>
-        <author-add></author-add>
-        <author-list></author-list>
+    <div class="main">
+        <Sidebar></Sidebar>
     </div>
 </template>
 
 <script>
-import AuthorList from '../components/AuthorList.vue';
-import AuthorSearch from '../components/AuthorSearch.vue';
-import AuthorAdd from '../components/AuthorAdd';
+import AuthorList from './components/AuthorList.vue';
+import AuthorSearch from './components/AuthorSearch.vue';
+import AuthorAdd from './components/AuthorAdd';
+import MyModal from './components/UI'
+import Sidebar from './components/Sidebar.vue';
+import TheHeader from './components/TheHeader.vue';
 export default {
     components: {
         AuthorList,
         AuthorSearch,
-        AuthorAdd
+        AuthorAdd,
+        MyModal,
+        Sidebar,
+        TheHeader
     },
 }
 </script>
 
-<style>
-    .app {
-        display: flex;
-        flex-direction: column;
+<style lang="scss">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
     }
-    .btn {
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        .header {
+            text-align: center;
+        }
+        .btn {
         width: 10%;
         margin: 15px 0;
         background: none;
-        justify-content: start;
         padding: 5px 10px;
         border-radius: 5px;
     }
+}
 </style>

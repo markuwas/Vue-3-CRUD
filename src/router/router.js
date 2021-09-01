@@ -1,16 +1,21 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Authors from '../views/Authors';
-
+import App from '../App';
 
 const routes = [
     {
-        path: '/Authors',
-        name: 'Athors',
+        path: '/',
+        name: 'App',
+        redirect: 'authors'
+    },
+    {
+        path: '/authors',
+        name: 'authors',
         component: Authors
     },
     {
-        path: '/Books',
-        name: 'Books',
+        path: '/books',
+        name: 'books',
         component: () => import('../views/Books.vue')
     }    
 ];

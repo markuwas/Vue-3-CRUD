@@ -11,7 +11,7 @@
     {
       "date": "25.08.2021, 21:17:30",
       "firstname": "Terry",
-      "lastname": "Pratchet",
+      "lastname": "Pratchett",
       "dateofbirth": "28.04.1948",
       "dateofdeath": "12.03.2015",
       "id": 2
@@ -31,22 +31,72 @@
       "dateofbirth": "20.09.1948",
       "dateofdeath": "--",
       "id": 4
+    },
+    {
+      "date": "01.09.2021, 15:09:14",
+      "firstname": "Random",
+      "lastname": "Author",
+      "dateofbirth": "09.09.1988",
+      "dateofdeath": "",
+      "id": 5
     }
   ],
   "books": [
     {
       "id": 1,
-      "title": "The Lord of The Rings",
-      "dateofpublication": "29.07.1954",
-      "description": "Epic Saga",
+      "title": "The Hobbit, or There and Back Again",
+      "photo": "https://content2.rozetka.com.ua/goods/images/big/10850301.jpg",
+      "dateofpublication": "21.09.1937",
+      "description": "The Hobbit is set within Tolkien's fictional universe and follows the quest of home-loving Bilbo Baggins, the titular hobbit, to win a share of the treasure guarded by Smaug the dragon. Bilbo's journey takes him from his light-hearted, rural surroundings into more sinister territory.",
       "authorId": 1
     },
     {
       "id": 2,
-      "title": "Hobbit",
-      "dateofpublication": "29.07.1951",
-      "description": "Some small guy",
+      "title": "The Lord of The Rings (3 Books)",
+      "photo": "https://i.ebayimg.com/00/s/NzMwWDkwMA==/z/tQsAAOSwNM1fyWU7/$_57.JPG?set_id=8800005007",
+      "dateofpublication": "29.07.1954 - 20.10.1955",
+      "description": "The Lord of the Rings is an epic high-fantasy novel by English author and scholar. Set in Middle-earth, a place like Earth at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit. The title refers to the story's main antagonist, the Dark Lord Sauron, who in an earlier age created the One Ring to rule the other Rings of Power given to Men, Dwarves, and Elves, in his campaign to conquer all of Middle-earth. From homely beginnings in the Shire, a hobbit land reminiscent of the English countryside, the story ranges across Middle-earth, following the quest to destroy the One Ring mainly through the eyes of the hobbits Frodo, Sam, Merry and Pippin.",
       "authorId": 1
+    },
+    {
+      "id": 3,
+      "title": "The Silmarillion",
+      "photo": "https://kbimages1-a.akamaihd.net/628e877c-6a1e-46ce-bb5e-6a4f12877773/353/569/90/False/the-silmarillion.jpg",
+      "dateofpublication": "15.09.1977",
+      "description": "The Silmarillion (Quenya: [silmaˈrilliɔn]) is a collection of mythopoeic stories by the English writer J. R. R. Tolkien, edited and published posthumously by his son Christopher Tolkien in 1977 with assistance from the fantasy author Guy Gavriel Kay. The Silmarillion tells of Eä, a fictional universe that includes the Blessed Realm of Valinor, the once-great region of Beleriand, the sunken island of Númenor, and the continent of Middle-earth, where Tolkien's most popular works—The Hobbit and The Lord of the Rings—take place.",
+      "authorId": 1
+    },
+    {
+      "id": 4,
+      "title": "The Colour of Magic",
+      "photo": "https://www.discworldemporium.com/963-thickbox_default/the-light-fantastic-first-edition-reprint.jpg",
+      "dateofpublication": "24.11.1983",
+      "description": "The story begins in Ankh-Morpork, the biggest city on the Discworld. The main character is an incompetent and cynical wizard named Rincewind, who is hired as a guide to naive Twoflower, an insurance clerk from the Agatean Empire who has come to visit Ankh-Morpork. Thanks to the commonality of gold in his homeland, Twoflower, though only a clerk, is rich compared to inhabitants of Ankh-Morpork. Initially attempting to flee with his advance payment for agreeing to be Twoflower's guide, Rincewind is captured by the Patrician of Ankh-Morpork, who forces him to protect Twoflower, lest the tourist's death provoke the Agatean Emperor into invading Ankh-Morpork. ",
+      "authorId": 2
+    },
+    {
+      "id": 5,
+      "title": "The Last Wish",
+      "photo": "https://content1.rozetka.com.ua/goods/images/big/182226500.jpg",
+      "dateofpublication": "1993 (Polish edition)",
+      "description": "The King of Temeria, Foltest, has offered a reward to anyone who can lift the curse on his daughter, Adda (the result of an incestuous union with his late sister, also named Adda), who was born as a striga, and now terrorizes the town every night. Foltest insists that his daughter not be harmed, but reluctantly grants Geralt permission to kill her if Geralt decides that Adda cannot be returned to human form. A more difficult question, to which Geralt can give no certain answer, is whether Adda, who has been a monster her whole life, can live as a normal human even if the curse is lifted.",
+      "authorId": 3
+    },
+    {
+      "id": 6,
+      "title": "Mort",
+      "photo": "https://content1.rozetka.com.ua/goods/images/big/3546207.jpg",
+      "dateofpublication": "12.11.1987",
+      "description": "Mort is a fantasy novel by British writer Terry Pratchett. Published in 1987, it is the fourth Discworld novel and the first to focus on the character Death, who only appeared as a side character in the previous novels. The title is the name of its main character, and is also a play on words: in French and Catalan, mort means \"death\". The French language edition is titled Mortimer, and the Catalan language edition is titled Morth. In the BBC's 2003 Big Read contest, viewers voted on the \"Nation's Best-loved Book\" Mort was among the Top 100 and chosen as the most popular of Pratchett's novels. In 2004, Pratchett stated that Mort was the first Discworld novel with which he was \"pleased\", stating that in previous books, the plot had existed to support the jokes, but that in Mort, the plot was integral ",
+      "authorId": 2
+    },
+    {
+      "id": 7,
+      "title": "A Game of Thrones",
+      "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4bcf3981646493.5d08b72093df8.jpg",
+      "dateofpublication": "01.08.1996",
+      "description": "A Game of Thrones is the first novel in A Song of Ice and Fire, a series of fantasy novels by the American author George R. R. Martin. In the novel, recounting events from various points of view, Martin introduces the plot-lines of the noble houses of Westeros, the Wall, and the Targaryens. The novel has inspired several spin-off works, including several games. It is also the namesake and basis for the first season of Game of Thrones, an HBO television series that premiered in April 2011. A March 2013 paperback TV tie-in re-edition was also titled Game of Thrones, excluding the indefinite article \"A\".",
+      "authorId": 4
     }
   ]
 }

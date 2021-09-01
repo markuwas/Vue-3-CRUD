@@ -1,15 +1,15 @@
 <template>
     <div class="authors">
-        <TheHeader></TheHeader>
         <div class="container">
             <AuthorSearch></AuthorSearch>
-            <AuthorAdd></AuthorAdd>
-            <AuthorList></AuthorList>
+            <AuthorAdd @add="addAuthor" ></AuthorAdd>
+            <AuthorList @edit="editAuthor" @delete="deleteAuthor" :authors="authors"></AuthorList>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 import AuthorList  from '@/components/AuthorList.vue'
 import AuthorAdd from '@/components/AuthorAdd.vue'
 import AuthorSearch from '@/components/AuthorSearch.vue'
@@ -22,14 +22,40 @@ export default {
       AuthorAdd,
       AuthorSearch,
       TheHeader
-  }
+  },
+  data() {
+            return {
+                authors: null,
+                errorMessage: '',
+            }
+        },
+    mounted() {
+        axios.get('http://localhost:3000/authors')
+        .then(response => (this.authors = response.data))
+    },
+    methods: {
+        addAuthor(author) {
+            axios.post('http://localhost:3000/authors', author)
+            .then( () => axios.get('http://localhost:3000/authors'))
+            .then(response => (this.authors = response.data))
+        },
+        editAuthor(author) {
+        },
+        deleteAuthor(id) {
+            axios.delete(`http://localhost:3000/authors/${id}`)
+            .then( () => axios.get('http://localhost:3000/authors'))
+            .then(response => (this.authors = response.data))
+        }
+    }
 }
 </script>
 
 <style lang="scss">
+    
     .container {
-        border: 2px solid grey;
+        border: 1px  grey;
         margin: 15px 20px;
         padding: 10px;
+        
     }        
 </style>

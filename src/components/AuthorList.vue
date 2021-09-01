@@ -4,25 +4,25 @@
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Date of birth</th>
-                    <th>Date of death</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Born</th>
+                    <th>Died</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody v-for="author in authors" :key="author.id">
                 <tr>
-                    <th>{{ author.date }}</th>
-                    <th>{{ author.firstname }}</th>
-                    <th>{{ author.lastname }}</th>
-                    <th>{{ author.dateofbirth }}</th>
-                    <th>{{ author.dateofdeath }}</th>
-                    <th>
+                    <td>{{ author.date }}</td>
+                    <td>{{ author.firstname }}</td>
+                    <td>{{ author.lastname }}</td>
+                    <td>{{ author.dateofbirth }}</td>
+                    <td>{{ author.dateofdeath }}</td>
+                    <td>
+                        <button @click="editAuthor(author)">Edit</button>
                         <button @click="deleteAuthor(author.id)">Delete</button>
-                        <button>Edit</button>
-                        <button @click="showBooks(author.id)"></button>
-                    </th>
+                        <button @click="showBooks(author.id)">Redirect</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -30,43 +30,53 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
-        data() {
-            return {
-                authors: null,
-                errorMessage: '',
+        props: {
+            authors: {
+                type: Array,
+                required: true
             }
-        },
-        mounted() {
-            axios.get('http://localhost:3000/authors')
-            .then(response => (this.authors = response.data))
-           
         },
         methods: {
+            editAuthor(author) {
+                this.$emit('edit', {
+                    "firstname": author.firstname,
+                    "lastname": author.lastname,
+                    "dateofbirth": author.dateofbirth,
+                    "dateofdeath": author.dateofdeath
+                })
+            },
             deleteAuthor(id) {
-               axios.delete(`http://localhost:3000/authors/${id}`)
-                .then(response => console.log(response))
+                this.$emit('delete', id)
             },
             showBooks(id) {
-                axios.get(`http://localhost:3000/authors/${id}/books`)
-                .then(response => (this.authors = response.data)) 
+               this.$router.push({name: 'books', query: { authorId: id } })
             }
-      }
+       }
     }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
     .list {
         display: flex;
         justify-self: center;
+        background: url('../assets/bg2.jpg');
     }
     .my__table {
-        border-collapse: collapse
-    }   
-    .my__table, th, tr {
-        border: 1px solid grey;
-        padding: 15px 35px;
+        border-collapse: collapse;
+        & th {
+            font-weight: bold;
+	        padding: 15px 65px;
+	        background: rgba(43, 61, 79, 0.54);
+        }
+        & td {
+            border-bottom: 1px solid grey;
+	        padding: 20px 65px;
+        }
+        & tbody:hover {
+            background-color: #42b983;
+            color: white;
+        }
         button {
             padding: 5px;
             margin: 5px;
@@ -74,6 +84,7 @@ export default {
                 text-decoration: none;
             }
         }
-    }
+    }   
+  
     
 </style>

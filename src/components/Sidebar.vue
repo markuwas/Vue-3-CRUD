@@ -2,11 +2,11 @@
     <div class="sidebar">
         <img class="logo" src="../assets/logo.png" alt="">
         <div id="nav">
-            <router-link to="/Authors">Authors</router-link> |
-            <router-link to="/Books">Books</router-link>
+            <router-link to="/authors">Authors</router-link> |
+            <router-link to="/books">Books</router-link>
         </div>
+          
     </div>
-        <router-view/>  
 </template>
 
 <script>
@@ -17,20 +17,20 @@ export default {
 
 <style lang="scss">
     .sidebar {
-        background: grey;
+        background: rgba(18, 90, 40, 0.22);
         display: flex;
         flex-direction: column;
-        width: 232px;
-        min-height: 937px;
+        min-height: 875px;
         padding: 20px;
         .logo {
+            padding: 5px;
             border-radius: 50%;
+            margin-bottom: 40px;
         }
     }
 
     #nav {
-    padding: 30px;
-
+    font-size: 19px;
     a {
         font-weight: bold;
         color: #2c3e50;

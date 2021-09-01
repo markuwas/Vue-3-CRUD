@@ -1,6 +1,5 @@
 <template>
     <div class="books">
-        <TheHeader></TheHeader>
         <BookList></BookList>
     </div>
 </template>
@@ -19,5 +18,5 @@ export default {
 </script>
 
 <style lang="scss">
-
+    
 </style>

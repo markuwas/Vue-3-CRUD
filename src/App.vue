@@ -1,6 +1,10 @@
 <template>
     <div class="main">
-        <Sidebar></Sidebar>
+        <TheHeader></TheHeader>
+        <div class="second_c">
+            <Sidebar></Sidebar>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -39,10 +43,16 @@ export default {
 
     .main {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
         .header {
             text-align: center;
         }
+        .second_c {
+            display: flex;
+
+        }
+        
         .btn {
         width: 10%;
         margin: 15px 0;

@@ -31,14 +31,6 @@
       "dateofbirth": "20.09.1948",
       "dateofdeath": "--",
       "id": 4
-    },
-    {
-      "date": "01.09.2021, 15:09:14",
-      "firstname": "Random",
-      "lastname": "Author",
-      "dateofbirth": "09.09.1988",
-      "dateofdeath": "",
-      "id": 5
     }
   ],
   "books": [

@@ -23,6 +23,12 @@ export default {
       AuthorSearch,
       TheHeader
   },
+  props: {
+            authors: {
+                type: Array,
+                required: true
+            }
+        },
   data() {
             return {
                 authors: null,
@@ -39,8 +45,9 @@ export default {
             .then( () => axios.get('http://localhost:3000/authors'))
             .then(response => (this.authors = response.data))
         },
-        editAuthor(author) {
-        },
+        // editAuthor(author) {
+        //     console.log(author)
+        // },
         deleteAuthor(id) {
             axios.delete(`http://localhost:3000/authors/${id}`)
             .then( () => axios.get('http://localhost:3000/authors'))

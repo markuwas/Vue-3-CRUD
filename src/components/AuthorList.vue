@@ -11,7 +11,9 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody v-for="author in authors" :key="author.id">
+            <tbody 
+              v-for="author in authors" 
+              :key="author.id">
                 <tr>
                     <td>{{ author.date }}</td>
                     <td>{{ author.firstname }}</td>
@@ -19,7 +21,7 @@
                     <td>{{ author.dateofbirth }}</td>
                     <td>{{ author.dateofdeath }}</td>
                     <td>
-                        <button @click="editAuthor(author)">Edit</button>
+                        <button @click="$emit('edit', author)">Edit</button>
                         <button @click="deleteAuthor(author.id)">Delete</button>
                         <button @click="showBooks(author.id)">Redirect</button>
                     </td>
@@ -39,18 +41,13 @@ export default {
         },
         methods: {
             editAuthor(author) {
-                this.$emit('edit', {
-                    "firstname": author.firstname,
-                    "lastname": author.lastname,
-                    "dateofbirth": author.dateofbirth,
-                    "dateofdeath": author.dateofdeath
-                })
+                this.$emit('edit', author)
             },
             deleteAuthor(id) {
                 this.$emit('delete', id)
             },
             showBooks(id) {
-               this.$router.push({name: 'books', query: { authorId: id } })
+               this.$router.push({name: 'books', query: { authorId: id} })
             }
        }
     }
@@ -85,6 +82,4 @@ export default {
             }
         }
     }   
-  
-    
 </style>

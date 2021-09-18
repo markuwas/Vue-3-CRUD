@@ -2,7 +2,7 @@
     <div class="authors">
         <div class="container">
             <AuthorSearch></AuthorSearch>
-            <AuthorAdd @add="addAuthor" ></AuthorAdd>
+            <AuthorAdd @add="addAuthor" :author="author"></AuthorAdd>
             <AuthorList @edit="editAuthor" @delete="deleteAuthor" :authors="authors"></AuthorList>
         </div>
     </div>
@@ -25,7 +25,8 @@ export default {
   },
   data() {
             return {
-                authors: null,
+                author: {},
+                authors: [],
                 errorMessage: '',
             }
         },
@@ -40,6 +41,8 @@ export default {
             .then(response => (this.authors = response.data))
         },
         editAuthor(author) {
+            console.log('eaa', author);
+            this.author = author;
         },
         deleteAuthor(id) {
             axios.delete(`http://localhost:3000/authors/${id}`)
@@ -51,11 +54,9 @@ export default {
 </script>
 
 <style lang="scss">
-    
     .container {
         border: 1px  grey;
         margin: 15px 20px;
         padding: 10px;
-        
     }        
 </style>

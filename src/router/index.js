@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Authors from '../views/Authors';
-import App from '../App';
 
 const routes = [
     {

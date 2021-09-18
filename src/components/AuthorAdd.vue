@@ -1,10 +1,29 @@
 <template>
-    <form class="authorAdd" >
-        <input type="text" v-bind:value="firstname" @input="firstname = $event.target.value" placeholder="First Name">
-        <input type="text" v-bind:value="lastname" @input="lastname = $event.target.value" placeholder="Last Name">
-        <input type="text" v-bind:value="dateofbirth" @input="dateofbirth = $event.target.value" placeholder="Date of birth">
-        <input type="text" v-bind:value="dateofdeath" @input="dateofdeath = $event.target.value" placeholder="Date of death">
-        <button class="btn__add" @click="addAuthor">Add Author</button>
+    <form class="authorAdd" @edit="editAuthor">
+        <input type="text"
+          v-bind:value="author.firstname"
+          @input="firstname = $event.target.value"
+          placeholder="First Name">
+        
+        <input type="text"
+          v-bind:value="author.lastname"
+          @input="lastname = $event.target.value"
+          placeholder="Last Name">
+        
+        <input type="text" 
+          v-bind:value="author.dateofbirth" 
+          @input="dateofbirth = $event.target.value" 
+          placeholder="Date of birth">
+        
+        <input type="text" 
+          v-bind:value="author.dateofdeath" 
+          @input="dateofdeath = $event.target.value" 
+          placeholder="Date of death">
+        
+        <button 
+          class="btn__add" 
+          @click="addAuthor">Add Author
+          </button>
     </form>
 </template>
 
@@ -12,13 +31,20 @@
 export default {
     data() {
         return {
-            date: '',
-            firstname: '',
-            lastname: '',
-            dateofbirth: '',
-            dateofdeath: '',
+            // date: '',
+            // firstname: '',
+            // lastname: '',
+            // dateofbirth: '',
+            // dateofdeath: '',
         }
     },
+    props: {
+            author: {
+                type: Object,
+                required: true,
+                default: {}
+            }
+        },
     methods: {
         addAuthor() {
             this.$emit('add', {
@@ -32,7 +58,13 @@ export default {
             this.lastname = '';
             this.dateofbirth = '';
             this.dateofdeath = '';
-        }
+        },
+        editAuthor(author) {
+            firstname = author.firstname;
+            lastname = author.lastname;
+            dateofbirth = author.dateofbirth;
+            dateofdeath = author.dateofdeath;
+         },
     }
 }
 </script>

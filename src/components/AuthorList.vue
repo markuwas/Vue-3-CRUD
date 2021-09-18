@@ -40,14 +40,9 @@ export default {
             }
         },
         methods: {
-            // editAuthor(author) {
-            //     this.$emit('edit', {
-            //         "firstname": author.firstname,
-            //         "lastname": author.lastname,
-            //         "dateofbirth": author.dateofbirth,
-            //         "dateofdeath": author.dateofdeath
-            //     })
-            // },
+            editAuthor(author) {
+                this.$emit('edit', author)
+            },
             deleteAuthor(id) {
                 this.$emit('delete', id)
             },

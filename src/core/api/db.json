@@ -31,6 +31,14 @@
       "dateofbirth": "20.09.1948",
       "dateofdeath": "--",
       "id": 4
+    },
+    {
+      "date": "19.09.2021, 00:09:56",
+      "firstname": "",
+      "lastname": "",
+      "dateofbirth": "",
+      "dateofdeath": "",
+      "id": 5
     }
   ],
   "books": [

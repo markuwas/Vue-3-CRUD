@@ -1,21 +1,25 @@
 <template>
     <form class="authorAdd" @edit="editAuthor">
         <input type="text"
-          v-bind:value="firstname"
+          v-bind:value="author.firstname"
           @input="firstname = $event.target.value"
           placeholder="First Name">
+        
         <input type="text"
-          v-bind:value="lastname"
+          v-bind:value="author.lastname"
           @input="lastname = $event.target.value"
           placeholder="Last Name">
+        
         <input type="text" 
-          v-bind:value="dateofbirth" 
+          v-bind:value="author.dateofbirth" 
           @input="dateofbirth = $event.target.value" 
           placeholder="Date of birth">
+        
         <input type="text" 
-          v-bind:value="dateofdeath" 
+          v-bind:value="author.dateofdeath" 
           @input="dateofdeath = $event.target.value" 
           placeholder="Date of death">
+        
         <button 
           class="btn__add" 
           @click="addAuthor">Add Author
@@ -27,17 +31,18 @@
 export default {
     data() {
         return {
-            date: '',
-            firstname: '',
-            lastname: '',
-            dateofbirth: '',
-            dateofdeath: '',
+            // date: '',
+            // firstname: '',
+            // lastname: '',
+            // dateofbirth: '',
+            // dateofdeath: '',
         }
     },
     props: {
-            authors: {
+            author: {
                 type: Object,
-                required: true
+                required: true,
+                default: {}
             }
         },
     methods: {

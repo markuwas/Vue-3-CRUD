@@ -12,7 +12,6 @@
 import AuthorList from './components/AuthorList.vue';
 import AuthorSearch from './components/AuthorSearch.vue';
 import AuthorAdd from './components/AuthorAdd';
-import MyModal from './components/UI'
 import Sidebar from './components/Sidebar.vue';
 import TheHeader from './components/TheHeader.vue';
 export default {
@@ -20,7 +19,6 @@ export default {
         AuthorList,
         AuthorSearch,
         AuthorAdd,
-        MyModal,
         Sidebar,
         TheHeader
     },

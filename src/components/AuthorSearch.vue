@@ -2,7 +2,7 @@
   <div class="search">
       <form>
           <input type="text" placeholder="Search">
-          <button class="btn__search" @click="search">Search</button>
+          <button class="btn__search">Search</button>
       </form>
   </div>
 </template>

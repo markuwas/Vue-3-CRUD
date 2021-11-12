@@ -1,12 +1,10 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import { authorsStore } from '@/store/authorsStore';
+import { booksStore } from '@/store/booksStore';
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    modules: {
+    authorsStore,
+    booksStore,
   }
 })

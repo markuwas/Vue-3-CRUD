@@ -29,14 +29,7 @@
 
 <script>
 export default {
-    data() {
-        return {
-            // date: '',
-            // firstname: '',
-            // lastname: '',
-            // dateofbirth: '',
-            // dateofdeath: '',
-        }
+    data() {     
     },
     props: {
             author: {

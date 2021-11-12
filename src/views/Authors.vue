@@ -26,13 +26,15 @@ export default {
   data() {
             return {
                 author: {},
-                authors: [],
-                errorMessage: '',
             }
         },
     mounted() {
-        axios.get('http://localhost:3000/authors')
-        .then(response => (this.authors = response.data))
+        this.$store.dispatch('authorsStore/getAuthors', { root: true });
+    },
+    computed: {
+        authors() {
+            return this.$store.getters['authorsStore/authors']
+        }
     },
     methods: {
         addAuthor(author) {

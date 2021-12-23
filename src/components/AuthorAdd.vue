@@ -1,85 +1,90 @@
 <template>
-    <form class="authorAdd" @edit="editAuthor">
-        <input type="text"
-          v-bind:value="author.firstname"
-          @input="firstname = $event.target.value"
-          placeholder="First Name">
-        
-        <input type="text"
-          v-bind:value="author.lastname"
-          @input="lastname = $event.target.value"
-          placeholder="Last Name">
-        
-        <input type="text" 
-          v-bind:value="author.dateofbirth" 
-          @input="dateofbirth = $event.target.value" 
-          placeholder="Date of birth">
-        
-        <input type="text" 
-          v-bind:value="author.dateofdeath" 
-          @input="dateofdeath = $event.target.value" 
-          placeholder="Date of death">
-        
-        <button 
-          class="btn__add" 
-          @click="addAuthor">Add Author
-          </button>
-    </form>
+  <form class="authorAdd" @edit="editAuthor">
+    <input
+      type="text"
+      v-bind:value="author.firstname"
+      @input="firstname = $event.target.value"
+      placeholder="First Name"
+    />
+
+    <input
+      type="text"
+      v-bind:value="author.lastname"
+      @input="lastname = $event.target.value"
+      placeholder="Last Name"
+    />
+
+    <input
+      type="text"
+      v-bind:value="author.dateofbirth"
+      @input="dateofbirth = $event.target.value"
+      placeholder="Date of birth"
+    />
+
+    <input
+      type="text"
+      v-bind:value="author.dateofdeath"
+      @input="dateofdeath = $event.target.value"
+      placeholder="Date of death"
+    />
+
+    <button class="btn__add" @click="addAuthor">Add Author</button>
+    <q-btn no-caps color="primary" class="btn__add">Add Author</q-btn>
+  </form>
 </template>
 
 <script>
 export default {
-    data() {     
+  data() {},
+  props: {
+    author: {
+      type: Object,
+      required: true,
+      default: {},
     },
-    props: {
-            author: {
-                type: Object,
-                required: true,
-                default: {}
-            }
-        },
-    methods: {
-        addAuthor() {
-            this.$emit('add', {
-                "date": new Date().toLocaleString(),
-                "firstname": this.firstname,
-                "lastname": this.lastname,
-                "dateofbirth": this.dateofbirth,
-                "dateofdeath": this.dateofdeath
-            });
-            this.firstname = '';
-            this.lastname = '';
-            this.dateofbirth = '';
-            this.dateofdeath = '';
-        },
-        editAuthor(author) {
-            firstname = author.firstname;
-            lastname = author.lastname;
-            dateofbirth = author.dateofbirth;
-            dateofdeath = author.dateofdeath;
-         },
-    }
-}
+  },
+  methods: {
+    addAuthor() {
+      this.$emit("add", {
+        date: new Date().toLocaleString(),
+        firstname: this.firstname,
+        lastname: this.lastname,
+        dateofbirth: this.dateofbirth,
+        dateofdeath: this.dateofdeath,
+      });
+      this.firstname = "";
+      this.lastname = "";
+      this.dateofbirth = "";
+      this.dateofdeath = "";
+    },
+    editAuthor(author) {
+      firstname = author.firstname;
+      lastname = author.lastname;
+      dateofbirth = author.dateofbirth;
+      dateofdeath = author.dateofdeath;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-    .AuthorAdd, input {
-        display: flex;
-        margin-bottom: 10px;
-        padding: 5px 10px;
-
+.AuthorAdd,
+input {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 5px 10px;
 }
-    .btn__add {
-        display: flex;
-        color: #2c3e50;
-        font-weight: bold;
-        background: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        &:hover {
-            background: #42b983;    
-        }
-    } 
+.btn__add {
+  display: flex;
+  color: #2c3e50;
+  font-weight: bold;
+  background: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  &:hover {
+    background: #42b983;
+  }
+}
 </style>

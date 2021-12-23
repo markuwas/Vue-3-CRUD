@@ -3,7 +3,7 @@
         <div class="container">
             <AuthorSearch></AuthorSearch>
             <AuthorAdd @add="addAuthor" :author="author"></AuthorAdd>
-            <AuthorList @edit="editAuthor" @delete="deleteAuthor" :authors="authors"></AuthorList>
+            <AuthorList @edit="editAuthor" :authors="authors"></AuthorList>
         </div>
     </div>
 </template>
@@ -46,11 +46,6 @@ export default {
             console.log('eaa', author);
             this.author = author;
         },
-        deleteAuthor(id) {
-            axios.delete(`http://localhost:3000/authors/${id}`)
-            .then( () => axios.get('http://localhost:3000/authors'))
-            .then(response => (this.authors = response.data))
-        }
     }
 }
 </script>

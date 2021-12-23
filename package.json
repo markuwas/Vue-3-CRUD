@@ -7,7 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@quasar/extras": "^1.0.0",
     "axios": "^0.21.4",
+    "quasar": "^2.0.0",
     "vue": "^3.2.21",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.0-0"
@@ -18,8 +20,9 @@
     "@vue/cli-service": "^4.5.15",
     "@vue/compiler-sfc": "^3.2.21",
     "sass": "^1.43.4",
-    "sass-loader": "^8.0.2",
-    "scss": "^0.2.4"
+    "sass-loader": "^10.1.0",
+    "scss": "^0.2.4",
+    "vue-cli-plugin-quasar": "~4.0.4"
   },
   "browserslist": [
     "> 1%",

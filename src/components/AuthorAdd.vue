@@ -1,46 +1,45 @@
 <template>
-  <form class="authorAdd" @edit="editAuthor">
-    <input
-      type="text"
-      v-bind:value="author.firstname"
-      @input="firstname = $event.target.value"
-      placeholder="First Name"
-    />
+  
+    <q-btn 
+      no-caps 
+      color="primary" 
+      class="btn__add"
+      @click="authorModal = true"
+      >Add Author
+      </q-btn>
+    <q-dialog v-model="authorModal">
+      <q-card style="min-width: 550px">
+        <q-card-section align="center">
+          <div class="text-h6">Here you can add new author</div>
+        </q-card-section>
 
-    <input
-      type="text"
-      v-bind:value="author.lastname"
-      @input="lastname = $event.target.value"
-      placeholder="Last Name"
-    />
+        <q-card-section class="q-pt-none">
+          <q-input :value="author.firstname" v-model="firstname" placeholder="First name" />
+          <q-input :value="author.lastname" placeholder="Last name" />
+          <q-input :value="author.dateofdeath" placeholder="Data of birth" />
+          <q-input :value="author.dateofbirth" placeholder="Data of death" />
+        </q-card-section>
 
-    <input
-      type="text"
-      v-bind:value="author.dateofbirth"
-      @input="dateofbirth = $event.target.value"
-      placeholder="Date of birth"
-    />
-
-    <input
-      type="text"
-      v-bind:value="author.dateofdeath"
-      @input="dateofdeath = $event.target.value"
-      placeholder="Date of death"
-    />
-
-    <button class="btn__add" @click="addAuthor">Add Author</button>
-    <q-btn no-caps color="primary" class="btn__add">Add Author</q-btn>
-  </form>
+        <q-card-actions align="right" class="text-primary">
+          <q-btn flat label="Add author" v-close-popup />
+          <q-btn flat label="Cancel" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+      
 </template>
 
 <script>
 export default {
-  data() {},
+  data() {
+    return {
+      authorModal: false,
+    }
+  },
   props: {
     author: {
       type: Object,
       required: true,
-      default: {},
     },
   },
   methods: {
@@ -52,10 +51,6 @@ export default {
         dateofbirth: this.dateofbirth,
         dateofdeath: this.dateofdeath,
       });
-      this.firstname = "";
-      this.lastname = "";
-      this.dateofbirth = "";
-      this.dateofdeath = "";
     },
     editAuthor(author) {
       firstname = author.firstname;
